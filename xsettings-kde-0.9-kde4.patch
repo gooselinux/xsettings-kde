@@ -1,0 +1,12 @@
+diff -up xsettings-kde-0.9/xsettings-kde.c.kde4 xsettings-kde-0.9/xsettings-kde.c
+--- xsettings-kde-0.9/xsettings-kde.c.kde4	2008-09-29 12:44:27.000000000 -0500
++++ xsettings-kde-0.9/xsettings-kde.c	2008-12-30 23:34:27.000000000 -0600
+@@ -232,7 +232,7 @@ void readConfig () {
+ 
+ 		user_file = 1;
+ 		if ((password = getpwuid (geteuid()))) {
+-			sprintf(filename, "%s/%s/share/config/%s",password->pw_dir, is_kde4 ? ".kde4" : ".kde", file_name[file_index]);
++			sprintf(filename, "%s/%s/share/config/%s",password->pw_dir, ".kde" , file_name[file_index]);
+ 
+ 			if (access (filename, F_OK) == 0) {
+ 				file = fopen (filename, "r");
